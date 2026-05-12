@@ -4,6 +4,19 @@ A full-stack web app for music producers and sound designers that lets you brows
 
 ---
 
+## Features
+
+- **Natural-language search** — type a description, get back the closest-matching sounds via cosine similarity in CLAP embedding space
+- **Similar-sound discovery** — click any file to find others with a similar audio signature
+- **Folder ingestion** — recursive scan of `.wav` / `.mp3` files with async background embedding via Celery
+- **Waveform thumbnails** — lightweight canvas rendering from pre-computed peak arrays (no per-view audio decode)
+- **Interactive playback** — WaveSurfer.js player with seek, play/pause, volume
+- **Keyword search** — filter by filename, title, artist, album (SQL full-text)
+- **Ableton Live integration** — load any file directly into a new MIDI track (Simpler) in a live session via OSC
+- **Real-time progress** — ingestion status polling shows current stage, file count, and filename in progress
+
+---
+
 ## Screenshots
 
 **Description search** — natural language query ranked by CLAP embedding similarity
@@ -17,19 +30,6 @@ A full-stack web app for music producers and sound designers that lets you brows
 
 **Ableton Live online** — real-time connection status indicator
 ![Ableton Live online](screenshots/ableton-live-online.png)
-
----
-
-## Features
-
-- **Natural-language search** — type a description, get back the closest-matching sounds via cosine similarity in CLAP embedding space
-- **Similar-sound discovery** — click any file to find others with a similar audio signature
-- **Folder ingestion** — recursive scan of `.wav` / `.mp3` files with async background embedding via Celery
-- **Waveform thumbnails** — lightweight canvas rendering from pre-computed peak arrays (no per-view audio decode)
-- **Interactive playback** — WaveSurfer.js player with seek, play/pause, volume
-- **Keyword search** — filter by filename, title, artist, album (SQL full-text)
-- **Ableton Live integration** — load any file directly into a new MIDI track (Simpler) in a live session via OSC
-- **Real-time progress** — ingestion status polling shows current stage, file count, and filename in progress
 
 ---
 
