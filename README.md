@@ -4,6 +4,22 @@ A full-stack web app for music producers and sound designers that lets you brows
 
 ---
 
+## Screenshots
+
+**Description search** — natural language query ranked by CLAP embedding similarity
+![Description search](screenshots/description-search.png)
+
+**Similarity search** — find sounds with a similar audio signature to a selected file
+![Similarity search](screenshots/similarity-search.png)
+
+**Add to new Ableton track** — one-click load into a new Simpler track in a live session
+![Add to new Ableton track](screenshots/add-to-ableton-track.png)
+
+**Ableton Live online** — real-time connection status indicator
+![Ableton Live online](screenshots/ableton-live-online.png)
+
+---
+
 ## Features
 
 - **Natural-language search** — type a description, get back the closest-matching sounds via cosine similarity in CLAP embedding space
