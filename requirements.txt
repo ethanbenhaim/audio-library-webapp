@@ -1,0 +1,41 @@
+# Web framework
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+
+# Background tasks
+celery[redis]>=5.4
+redis>=5.2
+
+# Database
+sqlalchemy>=2.0
+aiosqlite>=0.20.0
+
+# Audio processing
+librosa==0.10.2
+soundfile>=0.12.0
+mutagen>=1.47.0
+
+# NumPy — must be <2.0 for compatibility with torch 2.2 on macOS Intel
+numpy>=1.26,<2.0
+
+# llvmlite — must be pinned; 0.43.0 is the last version with macOS Intel binary wheels
+llvmlite==0.43.0
+
+# PyTorch — no PyPI wheels for macOS Intel + Python 3.11; install from PyTorch index:
+#   pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2.0
+torchaudio>=2.2.0
+
+# Embeddings — CLAP via HuggingFace
+# - Must be <5.0 (5.x needs torch >= 2.4, unavailable on macOS Intel)
+# - Must be <4.52 (4.52+ enforces torch >= 2.6 via CVE-2025-32434 check, blocks torch 2.2 on macOS Intel)
+transformers>=4.40.0,<4.52
+
+# Vector database (embedded local mode — no Docker needed)
+qdrant-client>=1.9.0
+
+# Ableton Live control (AbletonOSC)
+python-osc>=1.8.0
+
+# Config
+pyyaml>=6.0

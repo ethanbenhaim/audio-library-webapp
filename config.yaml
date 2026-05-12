@@ -1,0 +1,41 @@
+embedding:
+  # Model type: currently supported: clap
+  # CLAP maps audio and text into the same embedding space (like CLIP for audio)
+  model_type: clap
+
+  # HuggingFace model ID — swap this to change the model
+  # Options:
+  #   laion/larger_clap_general     — general audio (recommended)
+  #   laion/larger_clap_music       — music-focused
+  #   laion/clap-htsat-unfused      — lighter, faster
+  model_id: laion/larger_clap_general
+
+  # Device: cpu | cuda | mps (Apple Silicon)
+  device: cpu
+
+  # Number of audio files to embed per batch
+  batch_size: 4
+
+database:
+  # Path to SQLite file (relative to backend/)
+  sqlite_path: ../data/audio.db
+
+  # Number of waveform amplitude peaks to store per file (for thumbnail rendering)
+  waveform_samples: 200
+
+qdrant:
+  # local: runs Qdrant in-process, persisted to disk — no Docker needed
+  # server: connects to a running Qdrant server (set host + port)
+  mode: local
+  local_path: ../data/qdrant
+  host: localhost
+  port: 6333
+  collection: audio_files
+
+server:
+  host: 0.0.0.0
+  port: 8000
+
+celery:
+  broker_url: redis://localhost:6379/0
+  result_backend: redis://localhost:6379/0
